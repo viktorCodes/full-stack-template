@@ -1,12 +1,11 @@
 {
   "name": "full-stack-template",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev" : "nodemon server.js"
+    "start": "nodemon server.js",
+    "dev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -15,9 +14,19 @@
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "mongodb": "^4.7.0"
+    "mongodb": "^4.7.0",
+    "mongoose": "^6.4.6"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
-  }
+    "nodemon": "^2.0.19"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viktorCodes/full-stack-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viktorCodes/full-stack-template/issues"
+  },
+  "homepage": "https://github.com/viktorCodes/full-stack-template#readme",
+  "description": ""
 }

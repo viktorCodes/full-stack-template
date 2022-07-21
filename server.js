@@ -1,23 +1,13 @@
 const express = require('express')
 const app = express()
 const cors = require('cors')
-const MongoClient = require('mongodb').MongoClient
+const mongoose = require('mongoose')
 require('dotenv').config()
 const PORT = process.env.PORT || 8000
 
 //connect to database
 
-let db,
-     dbConnectionString = process.env.DB_STRING,
-     dbName = 'sample_mflix',
-     collection
-
-     MongoClient.connect(dbConnectionString)
-      .then(client => {
-        console.log(`Connected to Database`)
-         db = client.db(dbName)
-         collection = db.collection('movies')
-      })
+const connectDB =
 //middleware
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
