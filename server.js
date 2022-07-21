@@ -27,8 +27,11 @@ app.use(cors())
 
 app.get('/', async (request, response) => {
 
-    try {
-        response.render('index.ejs')
+    try { 
+         //Get data from DB - specific collection
+         //After data is found, then render ejs And pass
+         //the data so it can render on the page
+        response.render('index.ejs', (data_here))
 
     } catch(error){
         response.status(500).send({message: error.message})
