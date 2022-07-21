@@ -7,7 +7,15 @@ const PORT = process.env.PORT || 8000
 
 //connect to database
 
-const connectDB =
+const connectDB = async () =>{
+  try {
+        await mongoose.connect(process.env.DB_STRING, {useNewUrlParser: true})
+      console.log(`Connected to database: ${mongoose.connection.name}`)
+  } catch (err) {
+         console.log('Failed to connect', err)
+  }
+}
+connectDB();
 //middleware
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
