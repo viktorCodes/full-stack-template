@@ -4,6 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const PORT = process.env.PORT || 8000
+const TestModel = require('./models/schema')
 
 //connect to database
 
@@ -31,7 +32,9 @@ app.get('/', async (request, response) => {
          //Get data from DB - specific collection
          //After data is found, then render ejs And pass
          //the data so it can render on the page
-        response.render('index.ejs', (data_here))
+         const content = await TestModel.find()
+         console.log(content)
+        response.render('index.ejs', {contentKey: content})
 
     } catch(error){
         response.status(500).send({message: error.message})

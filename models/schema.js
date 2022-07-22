@@ -7,4 +7,4 @@ const testSchema = new mongoose.Schema({
         type: String
     }
 })
-module.exports = mongoose.model('TestModel', testSchema, 'tes_collection')
+module.exports = mongoose.model('TestModel', testSchema, 'test_collection')
